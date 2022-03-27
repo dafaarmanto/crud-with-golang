@@ -1,0 +1,15 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    <h2 class="my-5">Input data baru</h2>  
+      <form method="POST" action="insert">
+        <div class="input-group mb-3">
+          <input type="text" name="name" class="form-control" placeholder="Masukkan nama kamu" aria-label="name" aria-describedby="basic-addon1" required>
+        </div>
+        <div class="input-group mb-5">
+          <input type="text" name="city" class="form-control" placeholder="Masukkan kota kamu" aria-label="city" aria-describedby="basic-addon1" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/" class="btn btn-outline-dark">Cancel</a>
+      </form>
+  {{ template "Footer" }}
+{{ end }}

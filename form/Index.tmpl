@@ -1,0 +1,36 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <div class="table-show mt-5">
+      <h2 class="mb-3">List User</h2>
+      <div class="row">
+        <div class"col-lg-8">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">City</th>
+              <th scope="col">View</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+              {{ range . }}
+              <tr>
+                <td>{{ .Id }}</td>
+                <td> {{ .Name }} </td>
+                <td>{{ .City }} </td> 
+                <td><a href="/show?id={{ .Id }}" class="text-decoration-none">View</a></td>
+                <td><a href="/edit?id={{ .Id }}" class="text-decoration-none">Edit</a></td>
+                <td><a href="/delete?id={{ .Id }}" class="text-decoration-none" onclick="return confirm('Apakah kamu yakin ingin menghapus?');">Delete</a><td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+  {{ template "Footer" }}
+{{ end }}
